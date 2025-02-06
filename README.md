@@ -1,8 +1,7 @@
-# React + Vite
+# Poke-App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Poke-App es una aplicación web de Pokémon desarrollada en React que permite explorar la lista de Pokémon, jugar un divertido juego de adivinanza y consultar un ranking de puntuaciones.
 
-Currently, two official plugins are available:
+[![App en producción](https://img.shields.io/badge/Producción-En%20línea-green)](https://poke-app-77716.web.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
