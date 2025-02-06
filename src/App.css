@@ -1,0 +1,467 @@
+/* ----------------------------- */
+/*         Variables CSS         */
+/* ----------------------------- */
+:root {
+  --color-primario: #FFCB05;           /* Amarillo Pokémon */
+  --color-secundario: #3B4CCA;           /* Azul Pokémon */
+  --fondo-gradiente: linear-gradient(135deg, #FFCB05 0%, #3B4CCA 100%);
+  --color-texto: #2A2A2A;
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --fondo-tarjeta: rgba(255, 255, 255, 0.8);
+  --boton-primario: #3B4CCA;
+  --boton-primario-hover: #2A3A9E;
+  --boton-secundario: #FFCB05;
+  --boton-secundario-hover: #E6B800;
+}
+
+/* ----------------------------- */
+/*           Reset CSS           */
+/* ----------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------------------- */
+/*         Estilos Globales      */
+/* ----------------------------- */
+body {
+  font-family: var(--fuente-principal);
+  background: var(--fondo-gradiente);
+  color: var(--color-texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  flex: 1;
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* ----------------------------- */
+/*         Botones Globales      */
+/* ----------------------------- */
+/* Se aplican a todos los elementos <button> y a los que tengan la clase .boton */
+button,
+.boton {
+  padding: 0.5rem 1rem;
+  min-width: 120px;
+  height: 2.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+}
+
+button:disabled,
+.boton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Botones primarios */
+button.primary,
+.boton.primary {
+  background-color: var(--boton-primario);
+  color: white;
+}
+
+button.primary:hover:not(:disabled),
+.boton.primary:hover:not(:disabled) {
+  background-color: var(--boton-primario-hover);
+  transform: translateY(-2px);
+}
+
+/* Botones secundarios */
+button.secondary,
+.boton.secondary {
+  background-color: var(--boton-secundario);
+  color: var(--color-texto);
+}
+
+button.secondary:hover:not(:disabled),
+.boton.secondary:hover:not(:disabled) {
+  background-color: var(--boton-secundario-hover);
+  transform: translateY(-2px);
+}
+
+/* ----------------------------- */
+/*         Tipografía          */
+/* ----------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  color: var(--color-texto);
+  text-align: center;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ----------------------------- */
+/*         Utilidades          */
+/* ----------------------------- */
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.text-center { text-align: center; }
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-1 { gap: 0.25rem; }
+.gap-4 { gap: 1rem; }
+.justify-center { justify-content: center; }
+
+/* ----------------------------- */
+/*    Estilos para el Menú (Header)  */
+/* ----------------------------- */
+.header {
+  background: transparent;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-bottom: 4px solid var(--color-primario);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.link {
+  font-weight: bold;
+  font-size: 1.1rem;
+  background-color: var(--boton-primario);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.link:hover {
+  background-color: var(--boton-primario-hover);
+  border-color: var(--boton-primario-hover);
+}
+
+.link.active {
+  background-color: var(--boton-primario-hover);
+  border-color: var(--boton-primario-hover);
+}
+
+/* Botón especial para cerrar sesión (se puede usar en Header) */
+.cerrar-sesion {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ----------------------------- */
+/* Estilos para la Página de Inicio (LandingPage) */
+/* ----------------------------- */
+.landing-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.logo {
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.usuario-nombre {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ----------------------------- */
+/* Estilos para Formularios (Login, Registro, etc.) */
+/* ----------------------------- */
+.form-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: var(--fondo-tarjeta);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.form-container input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+/* ----------------------------- */
+/* Estilos para la Lista de Tarjetas (Pokemons) */
+/* ----------------------------- */
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* ----------------------------- */
+/* Estilos para Tarjetas (Flip) */
+/* ----------------------------- */
+.card-container {
+  perspective: 1000px;
+  width: 150px;
+  margin: 0.5rem;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: var(--fondo-tarjeta);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.card-front .image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 1rem auto 0;
+}
+
+.card-front .name {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: var(--color-texto);
+}
+
+.card-front .link {
+  background-color: var(--boton-primario);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-front .link:hover {
+  background-color: var(--boton-primario-hover);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  font-size: 0.7rem;
+  color: var(--color-texto);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  overflow: hidden;
+}
+
+.card-back p {
+  margin: 0.2rem 0;
+  text-align: center;
+}
+
+.card-back .image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* ----------------------------- */
+/* Estilos para Botón Cargar Más */
+/* ----------------------------- */
+.loadMoreButton {
+  display: block;
+  margin: 2rem auto;
+}
+
+/* ----------------------------- */
+/* Estilos para Botón Subir */
+/* ----------------------------- */
+.boton-subir {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgba(85, 85, 85, 0.34);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 1000;
+}
+
+.boton-subir:hover {
+  background-color: var(--boton-primario-hover);
+  transform: translateY(-2px);
+}
+
+/* ----------------------------- */
+/*         Estilos para el Juego         */
+/* ----------------------------- */
+.juego-container {
+  padding: 1rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.titulo-juego {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.contenedor-imagen {
+  margin-bottom: 1rem;
+}
+
+.imagen-pokemon {
+  width: 200px;
+  height: auto;
+  transition: filter 0.3s ease;
+}
+
+.formulario-juego {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.etiqueta {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.juego-container input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Retroalimentación */
+.retroalimentacion,
+.texto-cargando {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #555;
+}
+.landing-container .ranking-button {
+  display: block;       /* Hace que ocupe todo el ancho disponible */
+  margin: 1rem auto;    /* Centra el botón horizontalmente y le agrega espacio arriba y abajo */
+}
+/* ----------------------------- */
+/* Estilos para el Modal Ranking */
+/* ----------------------------- */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: rgba(237, 236, 159, 0.75);
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.ranking-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.ranking-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* ----------------------------- */
+/*         Media Queries         */
+/* ----------------------------- */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  .link {
+    width: auto;
+    text-align: center;
+  }
+}
